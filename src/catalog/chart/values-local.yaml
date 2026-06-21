@@ -7,8 +7,6 @@ image:
   repository: public.ecr.aws/aws-containers/retail-store-sample-catalog
   pullPolicy: Always
   tag: "1.2.2"
-imagePullSecrets:
-  - name: regcred
 nameOverride: ""
 fullnameOverride: ""
 serviceAccount:
@@ -59,7 +57,7 @@ configMap:
   name:
 app:
   persistence:
-    provider: in-memory
+    provider: mysql
     endpoint: ""
     database: "catalog"
     secret:
